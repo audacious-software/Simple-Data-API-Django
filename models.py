@@ -17,7 +17,7 @@ def generate_api_token(length=32):
     return token
 
 class APIToken(models.Model):
-    class Meta: # pylint: disable=too-few-public-methods
+    class Meta: # pylint: disable=too-few-public-methods, old-style-class, no-init
         verbose_name = 'API Token'
         verbose_name_plural = 'API Tokens'
 
@@ -28,7 +28,7 @@ class APIToken(models.Model):
         return self.responsible_party
 
 class APICall(models.Model):
-    class Meta: # pylint: disable=too-few-public-methods
+    class Meta: # pylint: disable=too-few-public-methods, old-style-class, no-init
         verbose_name = 'API Call'
         verbose_name_plural = 'API Calls'
 

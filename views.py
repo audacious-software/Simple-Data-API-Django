@@ -41,7 +41,7 @@ def create_api_call(request, endpoint):
         request_dict['GET'] = dict(request.GET)
         request_dict['POST'] = dict(request.POST)
 
-        return APICall.objects.create(when=timezone.now(), request=json.dumps(request_dict, indent=2, default=str), token = matched_token)
+        return APICall.objects.create(when=timezone.now(), request=json.dumps(request_dict, indent=2, default=str), token=matched_token)
 
     raise PermissionDenied()
 
@@ -64,7 +64,7 @@ def fetch(request): # pylint: disable=unused-argument
 
         six.reraise(exc_type, exc_value, exc_traceback)
 
-    raise Exception('Error processing API call. Check logs for details.')
+    raise Exception('Error processing API call. Check logs for details.') # pylint: disable=broad-exception-raised
 
 @csrf_exempt
 @basic_auth
@@ -84,4 +84,4 @@ def test_api(request): # pylint: disable=unused-argument
 
         six.reraise(exc_type, exc_value, exc_traceback)
 
-    raise Exception('Error processing API call. Check logs for details.')
+    raise Exception('Error processing API call. Check logs for details.') # pylint: disable=broad-exception-raised

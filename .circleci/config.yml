@@ -38,7 +38,7 @@ jobs:
             mv project simple_data_api
             mkdir django
             cd django
-            django-admin.py startproject sm
+            django-admin startproject sm
             mv ../simple_data_api sm
             cd sm
             git clone https://github.com/audacious-software/Quicksilver-Django.git quicksilver

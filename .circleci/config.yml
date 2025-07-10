@@ -62,7 +62,7 @@ jobs:
           path: test-reports/
           destination: python_app
 
-  build-39:
+  build-310:
     docker:
       - image: cimg/python:3.10
       - image: cimg/postgres:14.18-postgis

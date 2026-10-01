@@ -21,7 +21,6 @@ def create_api_call(request, endpoint):
     auth_header = request.META.get('HTTP_AUTHORIZATION', None)
 
     if auth_header is not None:
-
         encoded_credentials = auth_header.split(' ')[1]  # Removes "Basic " to isolate credentials
 
         decoded_credentials = base64.b64decode(encoded_credentials).decode("utf-8").split(':')
